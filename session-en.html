@@ -56,7 +56,6 @@
         <div class="auth-page-wrap">
             <div class="auth-card">
 
-                <!-- Form view -->
                 <div id="regFormView">
                     <h2 class="auth-title">Book Your Session</h2>
                     <p class="auth-subtitle">Fill in your details, and your booking request will be automatically sent to us upon submitting.</p>
@@ -97,7 +96,6 @@
                     </form>
                 </div>
 
-                <!-- Success view -->
                 <div class="auth-success" id="regSuccessView">
                     <h2>Booking Request Sent ✓</h2>
                     <p>Thank you for registering! We have received your booking details and will contact you shortly to confirm your appointment.</p>
@@ -167,7 +165,6 @@
 
             const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${MY_PHONE}&text=${encodeURIComponent(textMessage)}&apikey=${CALLMEBOT_API_KEY}`;
 
-            // Send request via Image object to bypass CORS
             const img = new Image();
             img.src = apiUrl;
 
