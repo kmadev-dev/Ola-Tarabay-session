@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الجلسة | علا طرابيه</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ============ HEADER: مستقل تماماً بدون روابط خارجية ============ -->
+    <header class="header">
+        <div class="logo"><img src="img/logo.png" alt="logo"></div>
+    </header>
+
+    <!-- Floating "scroll to top" button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+        <div class="herosub">
+            <h1 class="titel1">جلسة دعم نفسي خاصة، لك وحدك</h1>
+            <h2 class="tital2">ساعة كاملة معي، مساحة آمنة تسمعين فيها صوتك الداخلي، وتاخدي فيها خطوتك الأولى نحو التوازن والوضوح.</h2>
+            <div class="herobutton">
+                <a href="#register">تسجيل الجلسة</a>
+                <a href="#details">تفاصيل الجلسة</a>
+            </div>
+        </div>
+        <img src="img/ola pic.jpg" alt="علا طرابيه - لايف كوتش" class="heropic">
+    </section>
+
+    <!-- ============ SESSION DETAILS ============ -->
+    <section id="details" class="process-section">
+        <h2 class="process-title">تفاصيل الجلسة</h2>
+        <div class="process-container">
+            <div class="process-step">
+                <div class="step-number">⏱</div>
+                <h3>المدة</h3>
+                <p>60 دقيقة، أونلاين أو حضوريًا حسب الأنسب إلك.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">💬</div>
+                <h3>شو رح تاخدي</h3>
+                <p>مساحة آمنة تمامًا للاستماع، وأدوات عملية تقدري تطبقيها من أول جلسة.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">💰</div>
+                <h3>السعر</h3>
+                <p>[حطي السعر هون]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ REGISTRATION FORM ============ -->
+    <section id="register">
+        <div class="auth-page-wrap">
+            <div class="auth-card">
+
+                <!-- Form view -->
+                <div id="regFormView">
+                    <h2 class="auth-title">سجّلي جلستك</h2>
+                    <p class="auth-subtitle">عبّي بياناتك، وستصلنا معلومات الحجز تلقائيًا فور الضغط على إرسال.</p>
+
+                    <div class="auth-error" id="regError"></div>
+
+                    <form id="registerForm" novalidate>
+                        <div class="auth-field">
+                            <label for="regName">الاسم الكامل</label>
+                            <input type="text" id="regName" autocomplete="name" required>
+                        </div>
+                        <div class="auth-field">
+                            <label for="regEmail">البريد الإلكتروني</label>
+                            <input type="email" id="regEmail" autocomplete="email" required>
+                        </div>
+                        <div class="auth-field">
+                            <label for="regPhone">رقم الهاتف</label>
+                            <div class="auth-phone-row">
+                                <select id="regCountryCode">
+                                    <option value="+971" selected>🇦🇪 +971</option>
+                                    <option value="+966">🇸🇦 +966</option>
+                                    <option value="+965">🇰🇼 +965</option>
+                                    <option value="+974">🇶🇦 +974</option>
+                                    <option value="+973">🇧🇭 +973</option>
+                                    <option value="+968">🇴🇲 +968</option>
+                                    <option value="+20">🇪🇬 +20</option>
+                                    <option value="+962">🇯🇴 +962</option>
+                                    <option value="+961">🇱🇧 +961</option>
+                                    <option value="+964">🇮🇶 +964</option>
+                                    <option value="+963">🇸🇾 +963</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+44">🇬🇧 +44</option>
+                                </select>
+                                <input type="tel" id="regPhone" inputmode="numeric" autocomplete="tel-national" placeholder="5xxxxxxxx" required>
+                            </div>
+                        </div>
+                        <button type="submit" id="submitBtn" class="auth-submit-btn">إرسال طلب الحجز</button>
+                    </form>
+                </div>
+
+                <!-- Success view -->
+                <div class="auth-success" id="regSuccessView">
+                    <h2>تم إرسال طلبك بنجاح ✓</h2>
+                    <p>شكراً لتسجيلك! تم استلام بيانات الحجز وسنتواصل معكِ قريباً لتأكيد الموعد.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SCRIPT ============ -->
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        const header = document.querySelector('.header');
+
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 120) {
+                header.classList.add('hide-header');
+            } else {
+                header.classList.remove('hide-header');
+            }
+            lastScrollY = currentScrollY;
+            backToTop.classList.toggle('visible', currentScrollY > 400);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ---- إرسال بيانات الحجز تلقائياً إلى واتساب الخاص بك ----
+        const MY_PHONE = '971508780362'; 
+        const CALLMEBOT_API_KEY = '1268062';
+
+        const errorBox = document.getElementById('regError');
+        function showError(message) {
+            errorBox.textContent = message;
+            errorBox.classList.add('visible');
+        }
+        function hideError() {
+            errorBox.classList.remove('visible');
+            errorBox.textContent = '';
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideError();
+
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const countryCode = document.getElementById('regCountryCode').value;
+            const phoneDigits = document.getElementById('regPhone').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name || !phoneDigits) {
+                showError('فضلًا عبّي كل الحقول.');
+                return;
+            }
+            if (!emailPattern.test(email)) {
+                showError('البريد الإلكتروني غير صحيح.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'جاري الإرسال...';
+
+            const phone = countryCode + ' ' + phoneDigits;
+            const textMessage = `حجز جلسة جديدة:\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`;
+
+            const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${MY_PHONE}&text=${encodeURIComponent(textMessage)}&apikey=${CALLMEBOT_API_KEY}`;
+
+            try {
+                await fetch(apiUrl, { mode: 'no-cors' });
+
+                document.getElementById('regFormView').style.display = 'none';
+                document.getElementById('regSuccessView').classList.add('active');
+            } catch (err) {
+                showError('حدث خطأ أثناء الإرسال، يرجى المحاولة لاحقاً.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'إرسال طلب الحجز';
+            }
+        });
+    </script>
+</body>
+</html>
