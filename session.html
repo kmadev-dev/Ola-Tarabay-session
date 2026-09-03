@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الجلسة | علا طرابيه</title>
+    <title>احجز جلستك | علا طرابيه</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,15 +14,15 @@
     </header>
 
     <!-- Floating "scroll to top" button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">↑</button>
 
     <!-- ============ HERO ============ -->
     <section id="hero" class="hero">
         <div class="herosub">
-            <h1 class="titel1">جلسة دعم نفسي خاصة، لك وحدك</h1>
-            <h2 class="tital2">ساعة كاملة معي، مساحة آمنة تسمعين فيها صوتك الداخلي، وتاخدي فيها خطوتك الأولى نحو التوازن والوضوح.</h2>
+            <h1 class="titel1">جلسة خاصة بك وحدك</h1>
+            <h2 class="tital2">ساعة كاملة معي — مساحة آمنة لسماع صوتك الداخلي، وأخذ خطوتك الأولى نحو التوازن والوضوح.</h2>
             <div class="herobutton">
-                <a href="#register">تسجيل الجلسة</a>
+                <a href="#register">احجز جلستك</a>
                 <a href="#details">تفاصيل الجلسة</a>
             </div>
         </div>
@@ -36,17 +36,17 @@
             <div class="process-step">
                 <div class="step-number">⏱</div>
                 <h3>المدة</h3>
-                <p>60 دقيقة، أونلاين أو حضوريًا حسب الأنسب إلك.</p>
+                <p>60 دقيقة، أونلاين أو حضورياً — حسب ما يناسبك.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">💬</div>
-                <h3>شو رح تاخدي</h3>
-                <p>مساحة آمنة تمامًا للاستماع، وأدوات عملية تقدري تطبقيها من أول جلسة.</p>
+                <h3>ماذا ستحصل عليه</h3>
+                <p>مساحة آمنة تماماً للاستماع لك، أدوات عملية يمكنك تطبيقها من الجلسة الأولى.</p>
             </div>
             <div class="process-step">
                 <div class="step-number">💰</div>
                 <h3>السعر</h3>
-                <p>[حطي السعر هون]</p>
+                <p>[أضف السعر هنا]</p>
             </div>
         </div>
     </section>
@@ -56,10 +56,9 @@
         <div class="auth-page-wrap">
             <div class="auth-card">
 
-                <!-- Form view -->
                 <div id="regFormView">
-                    <h2 class="auth-title">سجّلي جلستك</h2>
-                    <p class="auth-subtitle">عبّي بياناتك، وستصلنا معلومات الحجز تلقائيًا فور الضغط على إرسال.</p>
+                    <h2 class="auth-title">احجز جلستك</h2>
+                    <p class="auth-subtitle">أدخل بياناتك وسوف يصلنا طلب الحجز تلقائياً فور الإرسال.</p>
 
                     <div class="auth-error" id="regError"></div>
 
@@ -97,10 +96,9 @@
                     </form>
                 </div>
 
-                <!-- Success view -->
                 <div class="auth-success" id="regSuccessView">
-                    <h2>تم إرسال طلبك بنجاح ✓</h2>
-                    <p>شكراً لتسجيلك! تم استلام بيانات الحجز وسنتواصل معكِ قريباً لتأكيد الموعد.</p>
+                    <h2>تم إرسال طلب الحجز ✓</h2>
+                    <p>شكراً لتسجيلك! لقد استلمنا تفاصيل حجزك وسنتواصل معك قريباً لتأكيد الموعد.</p>
                 </div>
 
             </div>
@@ -151,11 +149,11 @@
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!name || !phoneDigits) {
-                showError('فضلًا عبّي كل الحقول.');
+                showError('يرجى ملء جميع الحقول المطلوبة.');
                 return;
             }
             if (!emailPattern.test(email)) {
-                showError('البريد الإلكتروني غير صحيح.');
+                showError('يرجى إدخال بريد إلكتروني صحيح.');
                 return;
             }
 
@@ -163,11 +161,10 @@
             submitBtn.textContent = 'جاري الإرسال...';
 
             const phone = countryCode + ' ' + phoneDigits;
-            const textMessage = `حجز جلسة جديدة:\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`;
+            const textMessage = `طلب حجز جلسة جديد:\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`;
 
             const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${MY_PHONE}&text=${encodeURIComponent(textMessage)}&apikey=${CALLMEBOT_API_KEY}`;
 
-            // إرسال الطلب خلفياً عبر عنصر صورة لتجنب حظر CORS
             const img = new Image();
             img.src = apiUrl;
 
