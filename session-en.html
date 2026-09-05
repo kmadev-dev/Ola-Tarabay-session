@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Session | Ola Tarabah</title>
+    <title>New Dawn | Ola Tarabah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,34 +19,86 @@
     <!-- ============ HERO ============ -->
     <section id="hero" class="hero">
         <div class="herosub">
-            <h1 class="titel1">A Private Session, Just for You</h1>
-            <h2 class="tital2">A full hour with me — a safe space to hear your inner voice, and take your first step toward balance and clarity.</h2>
+            <span class="fj-badge">🌿 New Dawn</span>
+            <h1 class="titel1">Not every ending frees us from the trace of a relationship.</h1>
+            <h2 class="tital2">
+                Sometimes a relationship ends... yet fear, blame, hesitation, pain, or a changed self-image remain inside us.<br><br>
+                And sometimes, the ending isn't a divorce or separation at all... it's simply the moment we decide we no longer want to carry the weight of that relationship with us.
+            </h2>
             <div class="herobutton">
-                <a href="#register">Book Your Session</a>
-                <a href="#details">Session Details</a>
+                <a href="#register">Reserve Your Spot Now 🤍</a>
+                <a href="#details">Program Details</a>
             </div>
         </div>
         <img src="img/ola pic.jpg" alt="Ola Tarabah - Life Coach" class="heropic">
     </section>
 
-    <!-- ============ SESSION DETAILS ============ -->
+    <!-- ============ PROGRAM DETAILS ============ -->
     <section id="details" class="process-section">
-        <h2 class="process-title">Session Details</h2>
+        <h2 class="process-title">That's Why I Designed New Dawn 🤍</h2>
+        <p class="fj-desc">
+            A one-month psychological support and training program for women who want to process what they’ve been through, break free from its aftermath, and begin reconnecting with themselves.
+        </p>
+
+        <h3 class="fj-subheading">During this month, you will receive:</h3>
         <div class="process-container">
             <div class="process-step">
-                <div class="step-number">⏱</div>
-                <h3>Duration</h3>
-                <p>60 minutes, online or in person — whichever works best for you.</p>
+                <div class="step-number">🤍</div>
+                <h3>1-on-1 Session</h3>
+                <p>A private individual session for every participant.</p>
             </div>
             <div class="process-step">
-                <div class="step-number">💬</div>
-                <h3>What You'll Get</h3>
-                <p>A completely safe space to be heard, plus practical tools you can apply from the very first session.</p>
+                <div class="step-number">🤍</div>
+                <h3>Group Meetings</h3>
+                <p>2 live group sessions + full access to recordings.</p>
             </div>
             <div class="process-step">
-                <div class="step-number">💰</div>
-                <h3>Price</h3>
-                <p>[Add the price here]</p>
+                <div class="step-number">🤍</div>
+                <h3>Daily Guidance</h3>
+                <p>Daily follow-ups in a private, supportive group.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">🤍</div>
+                <h3>Weekly Exercises</h3>
+                <p>Practical exercises based on CBT and Positive Psychology.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">🤍</div>
+                <h3>2 Workbooks</h3>
+                <p>Two dedicated program workbooks for guidance and practice.</p>
+            </div>
+        </div>
+
+        <!-- Bonus & Pricing Box -->
+        <div class="fj-card-main" style="margin-top: 3rem;">
+            <div class="fj-bonus-box">
+                <div class="bonus-icon">🎁</div>
+                <div>
+                    <strong>Special Bonus:</strong>
+                    <p>20% discount on additional individual sessions throughout the program duration.</p>
+                </div>
+            </div>
+
+            <div class="fj-meta-info">
+                <div class="meta-item">
+                    <span class="icon">📅</span>
+                    <div>
+                        <small>Start Date</small>
+                        <strong>September 15</strong>
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <span class="icon">👥</span>
+                    <div>
+                        <small>Limited Seats</small>
+                        <strong>15–20 Women Only</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fj-price-tag">
+                <span class="old-price">600 AED</span>
+                <span class="new-price">400 AED Only</span>
             </div>
         </div>
     </section>
@@ -57,8 +109,8 @@
             <div class="auth-card">
 
                 <div id="regFormView">
-                    <h2 class="auth-title">Book Your Session</h2>
-                    <p class="auth-subtitle">Fill in your details, and your booking request will be automatically sent to us upon submitting.</p>
+                    <h2 class="auth-title">Reserve Your Spot Now 🤍</h2>
+                    <p class="auth-subtitle">If the relationship is over… but its emotional weight is still living inside you, this might be your time for a New Dawn. 🌿</p>
 
                     <div class="auth-error" id="regError"></div>
 
@@ -68,7 +120,7 @@
                             <input type="text" id="regName" autocomplete="name" required>
                         </div>
                         <div class="auth-field">
-                            <label for="regEmail">Email</label>
+                            <label for="regEmail">Email Address</label>
                             <input type="email" id="regEmail" autocomplete="email" required>
                         </div>
                         <div class="auth-field">
@@ -92,13 +144,15 @@
                                 <input type="tel" id="regPhone" inputmode="numeric" autocomplete="tel-national" placeholder="5xxxxxxxx" required>
                             </div>
                         </div>
-                        <button type="submit" id="submitBtn" class="auth-submit-btn">Send Booking Request</button>
+                        <button type="submit" id="submitBtn" class="auth-submit-btn">Confirm Reservation</button>
                     </form>
+
+                    <p class="fj-disclaimer">A psychological support and coaching program; not a substitute for individual psychotherapy.</p>
                 </div>
 
                 <div class="auth-success" id="regSuccessView">
-                    <h2>Booking Request Sent ✓</h2>
-                    <p>Thank you for registering! We have received your booking details and will contact you shortly to confirm your appointment.</p>
+                    <h2>Reservation Request Sent ✓</h2>
+                    <p>Thank you for registering! We have received your booking request for the <strong>New Dawn</strong> program and will contact you shortly to confirm your spot.</p>
                 </div>
 
             </div>
@@ -149,7 +203,7 @@
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!name || !phoneDigits) {
-                showError('Please fill in all fields.');
+                showError('Please fill in all required fields.');
                 return;
             }
             if (!emailPattern.test(email)) {
@@ -161,7 +215,7 @@
             submitBtn.textContent = 'Sending...';
 
             const phone = countryCode + ' ' + phoneDigits;
-            const textMessage = `New session booking:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
+            const textMessage = `New New Dawn Registration:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
 
             const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${MY_PHONE}&text=${encodeURIComponent(textMessage)}&apikey=${CALLMEBOT_API_KEY}`;
 
