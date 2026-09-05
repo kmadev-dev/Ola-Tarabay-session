@@ -215,7 +215,10 @@
             submitBtn.textContent = 'جاري الإرسال...';
 
             const phone = countryCode + ' ' + phoneDigits;
-            const textMessage = `طلب انضمام جديد (فجر جديد):\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`;
+
+            const sessionTitle = "برنامج فجر جديد (New Dawn)";
+
+            const textMessage = `طلب انضمام جديد!\nالبرنامج: ${sessionTitle}\nالاسم: ${name}\nالبريد: ${email}\nالهاتف: ${phone}`;
 
             const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${MY_PHONE}&text=${encodeURIComponent(textMessage)}&apikey=${CALLMEBOT_API_KEY}`;
 
