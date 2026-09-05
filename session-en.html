@@ -215,7 +215,12 @@
             submitBtn.textContent = 'Sending...';
 
             const phone = countryCode + ' ' + phoneDigits;
-            const textMessage = `New New Dawn Registration:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
+
+            // تحديد اسم الجلسة هنا للتفرقة في رسالة الواتساب
+            const sessionTitle = "New Dawn Program (فجر جديد)";
+
+            // النص الذي يصلك عبر الواتساب متضمناً اسم الجلسة
+            const textMessage = `New Registration Received!\nProgram: ${sessionTitle}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
 
             const apiUrl = `https://api.callmebot.com/whatsapp.php?phone=${MY_PHONE}&text=${encodeURIComponent(textMessage)}&apikey=${CALLMEBOT_API_KEY}`;
 
